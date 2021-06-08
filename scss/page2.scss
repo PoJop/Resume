@@ -1,0 +1,203 @@
+@mixin item ($br1, $br2, $br3, $br4) {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    border-radius: $br1 $br2 $br3 $br4;
+    padding: 3px 7px;
+    @content
+};
+
+@mixin button () {
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #8A3976;
+    border: none;
+    padding: 0;
+    height: auto;
+    background-color:transparent;
+    @content
+}
+
+.section-page_2 {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #8A3976;
+    width: 100%;
+    
+        
+    
+    .section_wrapper{ 
+        height: 100vh;
+        overflow:scroll;
+        margin: 0 auto;
+        padding-left: 15px / 360px * 100%;
+        padding-right: 15px / 360px * 100%;
+        width: 92%; 
+        .item_info {
+            margin-top: 15px;
+            .info_wrapper {
+                display: flex;
+                p {
+                    flex: 1 1 auto;
+                    margin-right: 1px ;
+                    @include item (5px, 2px, 2px, 5px);
+                }
+
+                .button_list {
+                    display: flex;
+                    button {
+                        @include button;
+                    }
+                    .span_list {
+                        width: 19.14px;
+                        height: 11.65px;
+                        align-self:flex-end;
+                        background:  url(../img/arrowDown.svg) no-repeat;
+                        transition: all 0.3s ease 0s;
+                    }
+                    .span_list.active {
+                        background:  url(../img/upArrow.svg) no-repeat;
+                    }
+                    @include item (2px, 5px, 5px, 2px);
+                }
+            } 
+            .info_list {
+                margin-top: 4px;
+                @include item (5px, 5px, 5px, 5px);
+                display: none;
+            }
+            .info_list.active {
+                display: block;
+            }
+        }
+        .item_position {
+            margin-top: 5px;
+            @include item (5px, 5px, 5px, 5px);
+            span {
+                font-weight: normal;
+            }
+            p:nth-child(2){
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+
+        .items_stack:before {
+            margin: 7px 0 1px 0;
+            width: 100%;
+            display: block;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 15px;
+            text-align: center;
+            color: #FFFFFF;
+            content: "<!-- My current stack  -->";
+        }
+
+        .items_stack {
+            .items_wrapper{
+                display: flex;
+                flex-wrap: wrap;
+                .item {
+                    margin-top: 6px;
+                    text-align: center;
+                    flex-grow:1;
+                    @include item (5px, 5px, 5px, 5px);
+                }
+                .item:not(:last-child) {
+                    margin-right: 4px;
+                }
+            }
+
+            .items_skills {
+                margin-top: 6px;
+                display: flex;
+                .item {
+                    margin-right:1px;
+                    flex: 1 1 auto;
+                    @include item (5px, 2px, 2px, 5px);
+                }
+                .button_list2 {   
+                    display: flex;   
+                    button {
+                        @include button;
+                    }
+                    .span_list2 {
+                        width: 19.14px;
+                        height: 11.65px;
+                        align-self:flex-end;
+                        background:  url(../img/arrowDown.svg) no-repeat;
+                        transition: all 0.3s ease 0s;
+                    }
+                    .span_list2.active {
+                        background:  url(../img/upArrow.svg) no-repeat;
+                    }
+                    @include item (2px, 5px, 5px, 2px);
+                }
+            }
+            .info_list2 {
+                margin-top: 4px;
+                @include item (5px, 5px, 5px, 5px);
+                display: none;
+            }
+            .info_list2.active {
+                display: block;
+            }
+        }
+        
+        .item_about-me {
+            .item__wrapper {
+                img {
+                    width: 90px;
+                    height: 90px;
+                    margin: 15px 11px 0 0;
+                    border-radius: 50%;
+                    float: right;
+                }
+                @include item (5px, 5px, 5px, 5px);
+                height: 175px;
+            }
+            
+        }
+        .item_about-me::before {
+            margin: 9px 0;
+            width: 100%;
+            display: block;
+            font-weight: 300;
+            font-size: 10px;
+            line-height: 12px;
+            text-align: start;
+            color: rgba(255, 255, 255, 0.2);
+            content: '<div  class="about_me">';
+        }
+        
+        .item_about-me::after {
+            margin: 9px 0;
+            width: 100%;
+            display: block;
+            font-weight: 300;
+            font-size: 10px;
+            line-height: 12px;
+            text-align: end;
+            color: rgba(255, 255, 255, 0.2);
+            content: "</div>";
+        }
+        .item__language {
+            display: flex;
+            .item__wrapper {
+                flex: 1 1 auto;
+                @include item (5px, 5px, 5px, 5px);
+                span{
+                    font-style: italic;
+                    font-size: 12px;
+                    line-height: 15px;
+                }
+            }
+            margin-bottom: 77px;
+        }
+    }
+}

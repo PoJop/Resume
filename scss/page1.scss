@@ -1,0 +1,51 @@
+
+h1 {
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 76px;
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+h1 span {
+    font-weight: bold;
+}
+
+h1::before {
+    margin: 9px 0;
+    width: 100%;
+    display: block;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: start;
+    color: rgba(255, 255, 255, 0.2);
+    content: '<h1>';
+}
+
+h1::after {
+    margin: 9px 0;
+    width: 100%;
+    display: block;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: end;
+    color: rgba(255, 255, 255, 0.2);
+    content: '</h1>';
+}
+
+.logo {
+    position: fixed;
+    left: 14px;
+    top: 14px;
+    width: 42px;
+    height: 20px;
+}
+.svg_arrow {
+    position: absolute;
+    top: 40%;
+    right: 16px;
+}
